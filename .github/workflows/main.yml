@@ -9,7 +9,7 @@ jobs:
         uses: GuillaumeFalourd/clone-github-repo-action@v2
         with:
           owner: 'GuillaumeFalourd'
-          repository: 'hello-world-javascript-action'
+          repository: 'test-repo-for-action'
           access-token: ${{ secrets.ACCESS_TOKEN }}
       
       - name: Access cloned repository content
