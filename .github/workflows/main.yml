@@ -8,9 +8,9 @@ jobs:
       - name: Clone GuillaumeFalourd/formulas-training PRIVATE repository
         uses: GuillaumeFalourd/clone-github-repo-action@v2
         with:
-          owner: 'GuillaumeFalourd'
+          owner: 'margaritadanshina'
           repository: 'test-repo-for-action'
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          access-token: ${{ secrets.PAT }}
       
       - name: Access cloned repository content
         run: |
