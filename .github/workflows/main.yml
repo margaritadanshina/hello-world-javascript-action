@@ -10,7 +10,7 @@ jobs:
         with:
           owner: 'margaritadanshina'
           repository: 'test-repo-for-action'
-          access-token: ${{ secrets.PAT }}
+          access-token: ${{ secrets.test }}
       
       - name: Access cloned repository content
         run: |
