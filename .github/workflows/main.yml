@@ -3,13 +3,20 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: margaritadanshina/hello-world-javascript-action@v1.1
+      - name: Clone GuillaumeFalourd/formulas-training PRIVATE repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v2
         with:
-          who-to-greet: 'Margarita'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          owner: 'GuillaumeFalourd'
+          repository: 'hello-world-javascript-action'
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+      
+      - name: Access cloned repository content
+        run: |
+          echo "ROOT"
+          ls -la
+          echo "CLONED REPO"
+          cd formulas-training
+          ls -la
+
