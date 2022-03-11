@@ -5,15 +5,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Chekout
-        uses: actions/checkout@v2
-        with:
-          path: main
-      
       - name: Checkout tools repo
         uses: actions/checkout@v2
         with:
-          repository: margaritadanshina/test-repo-for-action
           path: test-repo-for-action
       
       
