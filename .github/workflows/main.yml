@@ -5,18 +5,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone GuillaumeFalourd/formulas-training PRIVATE repository
-        uses: GuillaumeFalourd/clone-github-repo-action@v2
+      - name: Chekout
+        uses: actions/checkout@v2
         with:
-          owner: 'margaritadanshina'
-          repository: 'test-repo-for-action'
-          access-token: ${{ secrets.test }}
+          path: main
       
-      - name: Access cloned repository content
-        run: |
-          echo "ROOT"
-          ls -la
-          echo "CLONED REPO"
-          cd formulas-training
-          ls -la
-
+      - name: Checkout tools repo
+        uses: actions/checkout@v2
+        with:
+          repository: margaritadanshina/test-repo-for-action
+          path: test-repo-for-action
+      
+      
