@@ -8,7 +8,9 @@ jobs:
     steps:
       - name: Checkout tools repo
         run: |
-          curl -i -u margaritadanshina:${{ secrets.THE_TOKEN }} -X POST  -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/margaritadanshina/repos -d '{"name": "new_repo"}'
+          curl -i -u margaritadanshina:${{ secrets.THE_TOKEN }} -X POST  -H "Accept: application/vnd.github.v3+json" https://github.com/api/v3/repos/margaritadanshina/repos -d '{"name": "test-repo"}'
+          git clone --bare git@github.com:code-for-fun-alums/trello-clone-template.git
+          git push --mirror git@github.com:code-for-fun-alums/newname.git
 
       
       
