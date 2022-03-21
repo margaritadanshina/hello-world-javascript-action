@@ -6,8 +6,8 @@ jobs:
 
     steps:
       - name: Checkout tools repo
-        uses: actions/checkout@v2
-        with:
-          path: test-repo-for-action
+      - run: |
+          curl -i -u margaritadanshina:${{ secrets.THE_TOKEN}} -X POST  -H "Accept: application/vnd.github.v3+json" https://github.com/api/v3/repos/margaritadanshina/repos -d '{"name": "new_repo"}'
+
       
       
