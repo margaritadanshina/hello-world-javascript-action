@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Checkout tools repo
         run: |
-          curl -i -u Margarita Danshina:THE_TOKEN -X POST  -H "Accept: application/vnd.github.v3+json" https://github.com/api/v3/repos/margaritadanshina/repos -d '{"name": "test-repo"}'
+          curl -i -u Margarita Danshina:${{secrets.THE_TOKEN}} -X POST  -H "Accept: application/vnd.github.v3+json" https://github.com/api/v3/repos/margaritadanshina/repos -d '{"name": "test-repo"}'
           git clone --bare git@github.com:margaritadanshina/new-test.git
           git push --mirror git@github.com:margaritadanshina/newname.git
         env:
